@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://th.bing.com/th/id/OIP.UKwoJ1-1hpV1f8MJBVuQSAHaEK?pid=ImgDet&rs=1"
+    />
+    <link rel="stylesheet" href="lovecal.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width:600px)"
+      href="love.css"
+    />
+    <title>Love Calculator</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://data1.ibtimes.co.in/en/full/561557/happy-valentines-day-2017.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      header {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="card m-auto text-center text-white formanu">
+        <div class="card-header bg-danger">Love Calculator</div>
+        <div class="card-body">
+          <form action="" class="m-auto" style="width: 67%">
+            <div class="form-group">
+              <input
+                type="text"
+                id="yourName"
+                name="Anurag"
+                class="form-control text-center"
+                placeholder="Your Name "
+              />
+            </div>
+            <div class="text-center w-100 m-auto">
+              <span class="text-center text-dark">+</span>
+            </div>
+            <div class="form-group mt-3">
+              <input
+                type="text"
+                id="loveName"
+                name="Anurag"
+                class="form-control text-center"
+                placeholder="Love Name "
+              />
+            </div>
+          </form>
+          <br />
+          <div class="w-75 m-auto">
+            <button class="btn btn-danger w-50" onclick="CheckLove()">
+              Click
+            </button>
+          </div>
+          <br />
+          <div class="mb-4">
+            <input
+              type="text"
+              name=""
+              id="loveValue"
+              placeholder="Love %"
+              class="form-control text-center w-25 m-auto"
+            />
+          </div>
+
+          <ul class="list-group d-none text-dark listanu m-auto" id="list">
+            <li class="list-group-item" id="l1">Your Name:</li>
+            <li class="list-group-item" id="l2">Love name:</li>
+            <li class="list-group-item" id="l3">Love % :</li>
+          </ul>
+        </div>
+        <div class="card-footer text-dark">
+          God Bless You And Your Relationship 😍👍
+        </div>
+      </div>
+    </header>
+    <script>
+      document
+        .getElementById("loveValue")
+        .addEventListener("focus", function () {
+          document.getElementById("loveValue").blur();
+        });
+      document.getElementById("loveValue").style.cursor = "default";
+      function CheckLove() {
+        const yourName = document.querySelector("#yourName").value;
+        const loveName = document.querySelector("#loveName").value;
+        const list = document.querySelector("#list");
+        if (yourName === "") {
+          return alert("Please Enter Your Name");
+        }
+        if (loveName === "") {
+          return alert("Please Enter Your Love Name");
+        }
+        // console.log(yourName, loveName);
+        let lovedata = Math.random() * 100;
+        lovedata = Math.floor(lovedata);
+        list.classList.remove("d-none");
+        document.querySelector("#l1").textContent = "Your Name: " + yourName;
+        document.querySelector("#l2").textContent = "Love Name: " + loveName;
+        document.querySelector("#l3").textContent = "Love : " + lovedata + "%";
+        document.querySelector("#loveValue").value = lovedata + "%";
+      }
+    </script>
+  </body>
+</html>
